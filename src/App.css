@@ -1,38 +1,58 @@
-.App {
-  text-align: center;
-}
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap');
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+body {
+    font-family: 'Ubuntu Mono', monospace;
+    background-color: #3E8E7E;
+    color: #fff;
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+header {
+    padding: 16px 32px;
+    display: flex;
+    align-items: center;
+    color: #FABB51;
+    justify-content: center;
+    font-size: 1.5rem;
 }
-
-.App-link {
-  color: #61dafb;
+button {
+    /* background-color: #FABB51; */
+    background-color: #FAEDC6;
+    color:#3E8E7E;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    padding: 5px 10px;
+    margin: 10px; 
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+h2 {
+    text-align: center;
+    font-size: 2rem;
+}
+.score {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+}
+.get-btn {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+}
+.card {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+   
+}
+.card h2 {
+    width: 100%;
+}
+footer {
+    position: absolute;
+    text-align: center;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 16px;
 }
