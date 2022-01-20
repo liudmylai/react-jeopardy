@@ -5,6 +5,7 @@ import Score from './components/Score';
 import Play from './components/Play';
 import QuestionList from './components/QuestionList';
 import Footer from './components/Footer';
+import Question from './components/Question';
 
 
 function App() {
@@ -15,7 +16,8 @@ function App() {
         <Score />
         <Play />
         <QuestionList />
-        <Footer />
+        <Question />
+        {/* <Footer /> */}
       </div>
     </GameProvider>
   );

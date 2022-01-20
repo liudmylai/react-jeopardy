@@ -4,7 +4,8 @@ body {
     font-family: 'Ubuntu Mono', monospace;
     background-color: #3E8E7E;
     color: #fff;
-
+    max-width: 1140px;
+    margin: 0 auto;
 }
 header {
     padding: 16px 32px;
@@ -15,7 +16,6 @@ header {
     font-size: 1.5rem;
 }
 button {
-    /* background-color: #FABB51; */
     background-color: #FAEDC6;
     color:#3E8E7E;
     font-weight: bold;
@@ -39,17 +39,41 @@ h2 {
     flex-wrap: nowrap;
     justify-content: center;
 }
+.card-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
 .card {
+    display: flex;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 200px;
+    background-color: #fabb51;
+    text-align: center;
+    border-radius: 10px;
+}
+.card h3 {
+    width: 100%;
+}
+.cards-info {
+    /* display: flex; */
+}
+.card-info {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
    
 }
-.card h2 {
+.card-info h2 {
     width: 100%;
 }
 footer {
-    position: absolute;
+    position: fixed;
     text-align: center;
     bottom: 0;
     left: 0;
