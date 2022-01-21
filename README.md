@@ -5,7 +5,7 @@ Make a Jeopardy Trivia App using [jService](https://jservice.io/)
 * ReactJS
 * Flexbox
 
-### Live preview
+### Live Preview
 https://liudmylai.github.io/react-jeopardy/
 
 ### Learning Objectives
