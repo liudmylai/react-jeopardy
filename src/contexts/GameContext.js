@@ -1,17 +1,29 @@
-import { useState, useEffect, createContext } from "react";
+import { useState, useEffect, createContext, useReducer } from "react";
 import * as API from '../services/rj-api';
 
 export const GameContext = createContext();
+// the function to update the score by clicking on the relevant button
+function reducer(state, action) {
+    switch (action.type) {
+        case 'increase':
+            return state + action.value;
+        case 'decrease':
+            return state - action.value;
+        case 'reset':
+            return 0;
+        default:
+            throw new Error();
+    }
+}
 
 export function GameProvider(props) {
     const [data, setData] = useState();
     const [isRandomClicked, setRandomClicked] = useState(false);
     const [isTenClicked, setTenClicked] = useState(false);
-    const [score, setScore] = useState(0);
     const [currentQuestion, setCurrentQuestion] = useState();
     const [reveal, setReveal] = useState(false);
+    const [score, dispatch] = useReducer(reducer, 0);
 
-    
     useEffect(() => {
         isRandomClicked && API.getRandomQuestion()
             .then(randomQuestion => setCurrentQuestion(randomQuestion[0]))
@@ -20,48 +32,48 @@ export function GameProvider(props) {
 
     useEffect(() => {
         isTenClicked && API.getTenQuestions()
-            .then(questions => questions.map((element) => ({...element, isDone: false})))
+            .then(questions => questions.map((element) => ({ ...element, isDone: false })))
             .then(questions => setData(questions))
             .finally(setTenClicked(false))
     }, [isTenClicked]);
-    // function to show the random question by clickin on 'Get Question' button
+    // the function to show the random question by clicking on the 'Get Question' button
     const getQuestion = () => {
         setData();
         setReveal(false);
         setCurrentQuestion();
         setRandomClicked(true);
     }
-    // function to show 10 questions by clickin on 'Get 10 Questions' button
+    // the function to show 10 questions by clicking on the 'Get 10 Questions' button
     const tenQuestions = () => {
         setCurrentQuestion();
         setTenClicked(true);
     }
-    // function to increase score
-    const increaseScore = () => {
-        setScore(prev => prev + currentQuestion.value);
+
+    // the function to hide current question after any update of the score
+    const updateScore = (type) => {
+        switch (type) {
+            case 'increase':
+            case 'decrease':
+                dispatch({ type, value: currentQuestion.value });
+                break;
+            case 'reset':
+                dispatch({ type });
+                break;
+        }
         setCurrentQuestion();
     }
-    // function to decrease score
-    const decreaseScore = () => {
-        setScore(prev => prev - currentQuestion.value);
-        setCurrentQuestion();
-    }
-    // function to reset score
-    const resetScore = () => {
-        setScore(0);
-        setCurrentQuestion();
-    }
-    // function to change 'isDone' property if question was revealed
+
+    // the function to change the 'isDone' property if the question has been revealed
     const changeIsDone = (id) => {
-        setData(prev => prev.map((element) => element.id === id ? {...element, isDone: true} : element));
+        setData(prev => prev.map((element) => element.id === id ? { ...element, isDone: true } : element));
     }
-    // function to reveal the question by clicking on card
+    // the function of revealing the question by clicking on the card
     const showQuestion = (question) => {
         changeIsDone(question.id);
         setCurrentQuestion(question);
         setReveal(false);
     }
-    // function to change the status of revealing by clicking on button 
+    // the function of changing the disclosure status by pressing a button 
     const handleReveal = () => {
         setReveal(prev => !prev);
     }
@@ -71,10 +83,8 @@ export function GameProvider(props) {
             data,
             getQuestion,
             tenQuestions,
-            increaseScore,
-            decreaseScore,
-            resetScore,
             score,
+            updateScore,
             showQuestion,
             currentQuestion,
             reveal,
