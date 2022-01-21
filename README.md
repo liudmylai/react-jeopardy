@@ -5,11 +5,11 @@ Make a Jeopardy Trivia App using [jService](https://jservice.io/)
 * ReactJS
 * Flexbox
 
-### Live preview
+### Live Preview
 https://liudmylai.github.io/react-jeopardy/
 
 ### Learning Objectives
-Practice setting up a React app
-Practice managing State with the useState, useReducer, and useContext Hooks
-Practice invoking the call to the third-party API using AXIOS and the useEffect Hook
-Practice conditional rendering
+* Practice setting up a React app
+* Practice managing State with the useState, useReducer, and useContext Hooks
+* Practice invoking the call to the third-party API using AXIOS and the useEffect Hook
+* Practice conditional rendering
