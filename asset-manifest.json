@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/react-jeopardy/static/css/main.482b9fef.css",
+    "main.js": "/react-jeopardy/static/js/main.33a785b6.js",
+    "index.html": "/react-jeopardy/index.html",
+    "main.482b9fef.css.map": "/react-jeopardy/static/css/main.482b9fef.css.map",
+    "main.33a785b6.js.map": "/react-jeopardy/static/js/main.33a785b6.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.482b9fef.css",
+    "static/js/main.33a785b6.js"
+  ]
+}
