@@ -1,8 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap');
-
+* {
+    margin: 0;
+    padding: 0;
+}
 body {
     font-family: 'Ubuntu Mono', monospace;
-    background-color: #3E8E7E;
+    background-color: #3e5f73;
     color: #fff;
     max-width: 1140px;
     margin: 0 auto;
@@ -16,18 +19,38 @@ header {
     font-size: 1.5rem;
 }
 button {
+    cursor: pointer;
     background-color: #FAEDC6;
-    color:#3E8E7E;
+    color:#000;
     font-weight: bold;
     border: none;
     border-radius: 10px;
     font-size: 1rem;
-    padding: 5px 10px;
+    padding: 10px 15px;
     margin: 10px; 
+}
+.decrease {
+    background-color: #fe938c;
+}
+.increase {
+    background-color: #6191b5;
+}
+.reset {
+    background-color: #e71d37;
+}
+h1 {
+    color: #fff;
+    margin: 2rem 0;
 }
 h2 {
     text-align: center;
     font-size: 2rem;
+    color: #ead27a;
+    margin: 2rem 0;
+}
+h2 span {
+    color: #fff;
+    font-size: 80%;
 }
 .score {
     display: flex;
@@ -44,39 +67,43 @@ h2 {
     flex-wrap: wrap;
     justify-content: center;
     gap: 10px;
+    margin: 2rem 0;
 }
-
 .card {
     display: flex;
     padding: 10px;
     justify-content: center;
-    align-items: center;
+    align-content: space-between;
     flex-wrap: wrap;
     width: 200px;
-    background-color: #fabb51;
+    background-color: #3E8E7E;
     text-align: center;
     border-radius: 10px;
 }
 .card h3 {
     width: 100%;
+    color: #ead27a;
+    margin: 1rem 0;
+    text-transform: capitalize;
 }
-.cards-info {
-    /* display: flex; */
+.card-info button {
+    background-color: #1a2650;
+    color: #fff;
+    width: 30%;
+    min-width: max-content;
+    padding: 20px;
+    font-size: 1.2rem;
 }
 .card-info {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-   
 }
 .card-info h2 {
     width: 100%;
 }
 footer {
-    position: fixed;
     text-align: center;
-    bottom: 0;
-    left: 0;
     width: 100%;
     padding: 16px;
 }

@@ -6,11 +6,11 @@ function Score() {
     
     return(
         <div>
-            <h2>Score: {score}</h2>
+            <h2>Score: <span>{score}</span></h2>
             <div className='score'>
-            <button onClick={decreaseScore}>Decrease</button>
-            <button onClick={increaseScore}>Increase</button>
-            <button onClick={resetScore}>Reset</button>
+            <button className='decrease' onClick={decreaseScore}>Decrease</button>
+            <button className='increase' onClick={increaseScore}>Increase</button>
+            <button className='reset' onClick={resetScore}>Reset</button>
             </div>
         </div>
     );

@@ -3,8 +3,8 @@ import { GameContext } from '../contexts/GameContext';
 
 function Question(props) {
     const { currentQuestion } = useContext(GameContext);
-    // const {item} = props;
     const [reveal, setReveal] = useState(false);
+    // function to change the status of revealing by clicking on button 
     const handleClick = () => {
         setReveal(prev => !prev);
     }
@@ -13,9 +13,9 @@ function Question(props) {
         <>
             {currentQuestion &&
                 <div className='card-info'>
-                    <h2>Category: {currentQuestion.category.title}</h2>
-                    <h2>Points: {currentQuestion.value}</h2>
-                    <h2>{reveal ? 'Answer: ' + currentQuestion.answer : 'Question: ' + currentQuestion.question}</h2>
+                    <h2>Category: <span>{currentQuestion.category.title}</span></h2>
+                    <h2>Points: <span>{currentQuestion.value}</span></h2>
+                    {reveal ? <h2>Answer: <span>{currentQuestion.answer}</span></h2> : <h2>Question: <span>{currentQuestion.question}</span></h2>}
                     <button onClick={handleClick}>Click to Reveal {reveal ? 'Question' : 'Answer'}</button>
                 </div>
             }

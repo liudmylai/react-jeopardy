@@ -4,8 +4,8 @@ import Header from './components/Header';
 import Score from './components/Score';
 import Play from './components/Play';
 import QuestionList from './components/QuestionList';
-import Footer from './components/Footer';
 import Question from './components/Question';
+import Footer from './components/Footer';
 
 
 function App() {
@@ -17,7 +17,7 @@ function App() {
         <Play />
         <QuestionList />
         <Question />
-        {/* <Footer /> */}
+        <Footer />
       </div>
     </GameProvider>
   );
