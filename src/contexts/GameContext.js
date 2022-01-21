@@ -9,6 +9,7 @@ export function GameProvider(props) {
     const [isTenClicked, setTenClicked] = useState(false);
     const [score, setScore] = useState(0);
     const [currentQuestion, setCurrentQuestion] = useState();
+    const [reveal, setReveal] = useState(false);
 
     
     useEffect(() => {
@@ -26,6 +27,7 @@ export function GameProvider(props) {
     // function to show the random question by clickin on 'Get Question' button
     const getQuestion = () => {
         setData();
+        setReveal(false);
         setCurrentQuestion();
         setRandomClicked(true);
     }
@@ -57,6 +59,11 @@ export function GameProvider(props) {
     const showQuestion = (question) => {
         changeIsDone(question.id);
         setCurrentQuestion(question);
+        setReveal(false);
+    }
+    // function to change the status of revealing by clicking on button 
+    const handleReveal = () => {
+        setReveal(prev => !prev);
     }
 
     return (
@@ -69,7 +76,9 @@ export function GameProvider(props) {
             resetScore,
             score,
             showQuestion,
-            currentQuestion
+            currentQuestion,
+            reveal,
+            handleReveal
         }}>
             {props.children}
         </GameContext.Provider>

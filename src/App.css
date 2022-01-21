@@ -11,7 +11,7 @@ body {
     margin: 0 auto;
 }
 header {
-    padding: 16px 32px;
+    /* padding: 16px 32px; */
     display: flex;
     align-items: center;
     color: #FABB51;
@@ -28,6 +28,13 @@ button {
     font-size: 1rem;
     padding: 10px 15px;
     margin: 10px; 
+}
+.App {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    min-height: 100vh;
 }
 .decrease {
     background-color: #fe938c;
@@ -71,20 +78,21 @@ h2 span {
 }
 .card {
     display: flex;
-    padding: 10px;
-    justify-content: center;
-    align-content: space-between;
-    flex-wrap: wrap;
-    width: 200px;
+    flex-direction: column;
+    align-content: center;
+    justify-content: space-between;
     background-color: #3E8E7E;
     text-align: center;
     border-radius: 10px;
+    width: 200px;
+    padding: 10px;
 }
 .card h3 {
     width: 100%;
     color: #ead27a;
     margin: 1rem 0;
     text-transform: capitalize;
+    font-size: 130%;
 }
 .card-info button {
     background-color: #1a2650;
@@ -96,14 +104,17 @@ h2 span {
 }
 .card-info {
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    flex-wrap: wrap;
+    align-items: center;
 }
-.card-info h2 {
-    width: 100%;
-}
+
 footer {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
     text-align: center;
     width: 100%;
-    padding: 16px;
+    padding: 20px 0;
+    flex: 1;
 }
