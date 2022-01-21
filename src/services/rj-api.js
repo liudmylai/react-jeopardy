@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const baseURL = 'http://jservice.io/api/';
+const baseURL = 'https://jservice.io/api/';
 
 function getAxios(endPoint) {
     return axios.get(baseURL + endPoint)
